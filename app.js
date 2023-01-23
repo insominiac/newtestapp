@@ -4,8 +4,8 @@ var fs = require('fs');
 const app = express()
 const port = 3000
 var base64 = require('base-64');
-let token = "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"
-var name = 'chatbot-Jaadoo';
+let token = "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"
+var name = 'chatbot-Power-AI-AOPL';
 
 function uploadFileApi(token, content) {
 
@@ -34,18 +34,16 @@ function uploadFileApi(token, content) {
 }
 
 app.get('/', (req, res) => {
-  var htmlcontent = '<html>Whatever</html>'
+var htmlcontent = '<html>Whatever</html>'
 var content = base64.encode(htmlcontent);
 let file = fs.writeFile(`${name}.html`, content, (error) => { /* handle error */ });
 
 console.log(file);
-  uploadFileApi(token, content)
-
-  res.status(200).send({
+res.send(uploadFileApi(token, content));
+  res.status(200).send(
+    {
     message: `Hello from ${name}!`
-
-    
-  })
+    })
   
 })
 
