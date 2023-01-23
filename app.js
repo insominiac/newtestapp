@@ -2,8 +2,8 @@ const express = require('express')
 var axios = require('axios');
 var fs = require('fs');
 var base64 = require('base-64');
-let token = "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"
-var name = 'chatbotai';
+let token = "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"
+var name = 'chatbotai2';
 var htmlcontent = '<html>Whatever</html>'
 var content = base64.encode(htmlcontent);
 let file = fs.writeFile(`${name}.html`, content, (error) => { /* handle error */ });
