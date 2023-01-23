@@ -5,7 +5,7 @@ const app = express()
 const port = 3000
 var base64 = require('base-64');
 let token = "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"
-var name = 'chatbot-Magic';
+var name = 'chatbot-Jaadoo';
 
 function uploadFileApi(token, content) {
 
