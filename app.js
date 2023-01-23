@@ -1,15 +1,16 @@
 const express = require('express')
 var axios = require('axios');
 var fs = require('fs');
+const app = express()
+const port = 3000
 var base64 = require('base-64');
-let token = "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"
-var name = 'chatbot-AI-algo-tuebn';
+let token = "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"
+var name = 'chatbot-Magic';
 var htmlcontent = '<html>Whatever</html>'
 var content = base64.encode(htmlcontent);
 let file = fs.writeFile(`${name}.html`, content, (error) => { /* handle error */ });
 
 console.log(file);
-uploadFileApi(token, content)
 
 function uploadFileApi(token, content) {
 
@@ -36,3 +37,18 @@ function uploadFileApi(token, content) {
             console.log(error);
         });
 }
+
+app.get('/', (req, res) => {
+  uploadFileApi(token, content)
+
+  res.status(200).send({
+    message: `Hello from ${name}!`
+
+    
+  })
+  
+})
+
+app.listen(port, () => {
+console.log(`Example app listening on port ${port}`)
+})
