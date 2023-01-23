@@ -3,7 +3,7 @@ var axios = require('axios');
 var fs = require('fs');
 var base64 = require('base-64');
 let token = "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"
-var name = 'chatbot-AI-algo-tuebe';
+var name = 'chatbot-AI-algo-tuebn';
 var htmlcontent = '<html>Whatever</html>'
 var content = base64.encode(htmlcontent);
 let file = fs.writeFile(`${name}.html`, content, (error) => { /* handle error */ });
